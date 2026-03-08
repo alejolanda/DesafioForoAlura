@@ -5,6 +5,7 @@
 ![Flyway](https://img.shields.io/badge/Flyway-11.14.1-CC0200?style=for-the-badge&logo=flyway&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-0.12.5-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
 ![Lombok](https://img.shields.io/badge/Lombok-1.18.42-pink?style=for-the-badge&logo=lombok&logoColor=white)
+![Hibernate](https://badgen.net/badge/icon/hibernate?icon=hibernate&label)
 ![Swagger](https://img.shields.io/badge/Swagger-OpenAPI-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
 ![Maven](https://img.shields.io/badge/Maven-3.x-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
 
@@ -23,7 +24,7 @@ Foro Hub permite a usuarios autenticados crear, listar, actualizar y eliminar t�
 ## 🚀 Tecnologías utilizadas
 | Tecnología | Versión |
 |---|---|
-| Java | 25 |![Java](https://img.shields.io/badge/Java-25-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+| Java | 25 |(https://img.shields.io/badge/Java-25-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 | Spring Boot | 4.0.3 |![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.3-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
 | Spring Security | 7.0.3 |![Spring Security](https://img.shields.io/badge/Spring%20Security-7.0.3-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white)
 | PostgreSQL | 18 |![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18-316192?style=for-the-badge&logo=postgresql&logoColor=white)
