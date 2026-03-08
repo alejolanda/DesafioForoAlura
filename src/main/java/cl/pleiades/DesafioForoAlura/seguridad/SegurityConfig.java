@@ -17,6 +17,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import javax.swing.*;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,26 +31,35 @@ public class SegurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
+                //Habilitar CORS para desarrollo
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                //Deshabilitar CSRF (necesario para APIs REST con JWT)
                 .csrf(csrf -> csrf.disable())
+                //API stateless (sin sesiones HTTP)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                //Reglas de autorización
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                        // Endpoints PÚBLICOS (no requieren token)
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                         .requestMatchers(HttpMethod.GET, "/topicos/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/swagger-ui/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/v3/api-docs/**").permitAll()
+                        // Endpoints PRIVADOS (requieren token JWT válido)
                         .requestMatchers(HttpMethod.POST, "/topicos").authenticated()
                         .requestMatchers(HttpMethod.PUT, "/topicos").authenticated()
                         .requestMatchers(HttpMethod.DELETE, "/topicos/**").authenticated()
+                        // Todo lo demás requiere autenticación
                         .anyRequest().authenticated()
                 )
-                // .addFilterBefore(securityFiltro, UsernamePasswordAuthenticationFilter.class)  // ← COMENTADO TEMPORALMENTE
+
+                .addFilterBefore(securityFiltro, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("*"));
+        configuration.setAllowedOrigins(List.of("*"));  // ⚠️ En producción, restringir a dominios específicos
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setExposedHeaders(List.of("Authorization"));
