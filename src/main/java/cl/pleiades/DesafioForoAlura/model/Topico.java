@@ -1,10 +1,8 @@
 package cl.pleiades.DesafioForoAlura.model;
 
+import cl.pleiades.DesafioForoAlura.dto.topico.DatosActualizacionTopico;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -47,5 +45,16 @@ public class Topico {
         this.autor = autor;
         this.curso = curso;
     }
-}
 
+    public void actualizar(DatosActualizacionTopico datos) {
+        if (datos.titulo() != null && !datos.titulo().isBlank()) {
+            this.titulo = datos.titulo();
+        }
+        if (datos.mensaje() != null && !datos.mensaje().isBlank()) {
+            this.mensaje = datos.mensaje();
+        }
+        if (datos.estado() != null) {
+            this.estado = datos.estado();
+        }
+    }
+}

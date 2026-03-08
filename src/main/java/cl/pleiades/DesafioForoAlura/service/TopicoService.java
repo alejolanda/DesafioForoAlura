@@ -70,7 +70,7 @@ public class TopicoService {
         Topico topico = topicoRepository.findById(datos.id())
                 .orElseThrow(() -> new RuntimeException("Tópico no encontrado"));
 
-        topico = topicoRepository.save(topico);
+        topico.actualizar(datos);
 
         return new DatosListadoTopico(topico);
     }

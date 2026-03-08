@@ -22,29 +22,28 @@ public class TopicoController {
     public ResponseEntity<DatosListadoTopico> crearTopico(@RequestBody @Valid DatosRegistroTopicos datos, UriComponentsBuilder uriBuilder) {
         DatosListadoTopico topicoCreado = topicoService.crearTopico(datos);
         URI url = uriBuilder.path("/topicos/{id}").buildAndExpand(topicoCreado.id()).toUri();
-        return ResponseEntity.created(url).body(topicoCreado);
+        return ResponseEntity.created(url).body(topicoCreado); // 201
     }
 
     @GetMapping
-    public List<DatosListadoTopico> listarTopicos() {
-        return topicoService.listarTopicos();
+    public ResponseEntity<List<DatosListadoTopico>> listarTopicos() {
+        return ResponseEntity.ok(topicoService.listarTopicos()); // 200
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<DatosDetalleTopico> obtenerDetalleTopico(@PathVariable Long id) {
-        DatosDetalleTopico topico = topicoService.obtenerDetalleTopico(id);
-        return ResponseEntity.ok(topico);
+        return ResponseEntity.ok(topicoService.obtenerDetalleTopico(id)); // 200
     }
 
-    @PutMapping
-    public ResponseEntity<DatosListadoTopico> actualizarTopico(@RequestBody @Valid DatosActualizacionTopico datos) {
-        DatosListadoTopico topicoActualizado = topicoService.actualizarTopico(datos);
-        return ResponseEntity.ok(topicoActualizado);
+    @PutMapping("/{id}")
+    public ResponseEntity<DatosListadoTopico> actualizarTopico(@PathVariable Long id, @RequestBody @Valid DatosActualizacionTopico datos) {
+        DatosActualizacionTopico datosConId = new DatosActualizacionTopico(id, datos.titulo(), datos.mensaje(), datos.estado());
+        return ResponseEntity.ok(topicoService.actualizarTopico(datosConId)); // 200
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarTopico(@PathVariable Long id) {
         topicoService.eliminarTopico(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build(); // 204
     }
 }

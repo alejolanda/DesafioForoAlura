@@ -1,11 +1,12 @@
 package cl.pleiades.DesafioForoAlura.dto.topico;
 
-import jakarta.validation.constraints.NotBlank;
+import cl.pleiades.DesafioForoAlura.model.EstadoTopico;
 import jakarta.validation.constraints.NotNull;
 
 public record DatosActualizacionTopico(
-        @NotNull Long id,
-        @NotBlank String titulo,
-        @NotBlank String mensaje
+        Long id,
+        String titulo,
+        String mensaje,
+        EstadoTopico estado
 ) {
 }
