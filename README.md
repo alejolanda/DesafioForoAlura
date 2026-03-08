@@ -32,7 +32,7 @@ Foro Hub permite a usuarios autenticados crear, listar, actualizar y eliminar t√
 | Flyway | 11.14.1 |![Flyway](https://img.shields.io/badge/Flyway-11.14.1-CC0200?style=for-the-badge&logo=flyway&logoColor=white)
 | JWT (jjwt) | 0.12.5 |![JWT](https://img.shields.io/badge/JWT-0.12.5-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
 | Lombok | 1.18.42 |![Lombok](https://img.shields.io/badge/Lombok-1.18.42-pink?style=for-the-badge&logo=lombok&logoColor=white)
-| SpringDoc OpenAPI | 2.3.0 ![Swagger](https://img.shields.io/badge/Swagger-OpenAPI-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)|
+| SpringDoc OpenAPI | 2.3.0 |![Swagger](https://img.shields.io/badge/Swagger-OpenAPI-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)|
 ![Maven](https://img.shields.io/badge/Maven-3.x-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
 
 
