@@ -25,7 +25,7 @@ Foro Hub permite a usuarios autenticados crear, listar, actualizar y eliminar t�
 | Tecnología | Versión |
 |---|---|
 | Java | 25 |(https://img.shields.io/badge/Java-25-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-| Spring Boot | 4.0.3 |![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.3-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+| Spring Boot | 4.0.3 |[Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.3-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
 | Spring Security | 7.0.3 |![Spring Security](https://img.shields.io/badge/Spring%20Security-7.0.3-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white)
 | PostgreSQL | 18 |![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 | Hibernate | 7.2.4 |![Hibernate](https://badgen.net/badge/icon/hibernate?icon=hibernate&label)
